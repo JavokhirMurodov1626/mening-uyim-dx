@@ -1,0 +1,64 @@
+<div class="section-top flex gap-4 mb-6">
+  <button
+    (click)="backToApplications()"
+    class="action-back-btn custom-shadow bg-white px-4 py-[6px] flex gap-2 items-center rounded"
+  >
+    <img class="rotate-90" src="assets/icons/chevron-down.svg" alt="" />
+    <span class="text-[#1F2937] font-InterMedium">Ortga</span>
+  </button>
+
+  <button
+    class="flex px-[14px] items-center justify-center rounded border border-[#389E0D]"
+  >
+    <img class="refresh-icon" src="assets/icons/refresh_two_side.svg" alt="" />
+  </button>
+</div>
+
+<div class="section-main flex gap-4 mb-6">
+  <div class="data-table p-4 rounded bg-white custom-shadow basis-3/4">
+    <application-data />
+  </div>
+
+  <div class="section-main__right basis-1/4">
+    <div
+      class="timer-wrapper w-full bg-white mb-6 py-4 px-6 rounded custom-shadow"
+    >
+      <app-timer />
+    </div>
+
+    <div class="button-group w-full">
+      <button
+        (click)="openModal()"
+        class="w-full px-2 py-[10px] rounded-lg mb-3 bg-customBlue text-white"
+      >
+        Dalolatnomani yuklash
+      </button>
+
+      <button class="w-full px-2 py-[10px] mb-3 btn-secondary rounded-lg">
+        Rad etish
+      </button>
+
+      <button
+        class="w-full px-2 py-[10px] rounded-lg mb-3 border border-[#D46B08] text-[#D46B08]"
+      >
+        Hisoblagichni ta’mirlash
+      </button>
+
+      <button
+        class="w-full px-2 py-[10px] rounded-lg mb-3 bg-customBlue text-white"
+      >
+        Yangi o'rnatish
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="section_bottom p-4 bg-white rounded">
+  <app-steps />
+</div>
+
+<app-dalolatnomaForm
+  title="Dalolatnomani yuklash"
+  [isModalOpen]="isModalOpen"
+  (onClose)="closeModal()"
+/>

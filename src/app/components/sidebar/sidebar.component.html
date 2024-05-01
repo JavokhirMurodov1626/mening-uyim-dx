@@ -1,0 +1,39 @@
+<aside class="h-screen w-[250px] flex flex-col">
+  <div class="px-4 py-[20px] bg-dark-900 flex justify-center">
+    <img src="assets/icons/mening_uyim_dx_logo.svg" alt="" />
+  </div>
+
+  <ul class="bg-dark-800 flex-1 px-4 py-6">
+    @for(item of sidebarMenu; track item){
+    <li class="sidebar_item group mb-4">
+      <a
+        routerLinkActive="active-link"
+        routerLink="{{ item.link }}"
+        class="flex items-center gap-3 hover:bg-white hover:bg-opacity-10 rounded"
+      >
+        <!-- <img class="w-7 h-7" src="{{ item.icon }}" alt="" /> -->
+        <div
+          class="icon-wrapper rounded bg-white bg-opacity-10 p-2 h-9 w-9 flex items-center justify-center"
+        >
+          <fa-icon [icon]="item.icon" class="icon text-secondary-100"></fa-icon>
+        </div>
+        <span class="text-base font-InterMedium text-secondary-100">{{
+          item.title
+        }}</span></a
+      >
+    </li>
+    }
+  </ul>
+
+  <div class="sidebar-bottom px-4 pb-6 bg-dark-800">
+    <button
+      class="flex items-center gap-2 hover:bg-white hover:bg-opacity-10 w-full rounded"
+    >
+      <div class="p-2 bg-white bg-opacity-10 rounded">
+        <img src="assets/icons/log_out.svg" alt="log out" />
+      </div>
+
+      <span class="text-base font-InterMedium text-secondary-100">Chiqish</span>
+    </button>
+  </div>
+</aside>

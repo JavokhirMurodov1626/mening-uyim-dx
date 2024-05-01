@@ -1,0 +1,113 @@
+<label
+  for="accordion"
+  class="flex justify-between gap-4 items-center cursor-pointer mb-6"
+  (click)="toggle()"
+>
+  <button
+    class="rounded py-2 px-4 flex gap-2 items-center border border-[#E6E7E9] bg-[#F3F3F4]"
+  >
+    <img src="assets/icons/history.svg" alt="history icon" />
+    <span class="font-InterMedium text-[#393C4E]">Amallar xronologiyasi</span>
+  </button>
+  <div class="dashed-line flex-1 border-t border-dashed border-[#E6E7E9]"></div>
+  <img
+    src="assets/icons/chevron-up.svg"
+    alt=""
+    class="transition-all duration-300 ease-linear"
+    [class]="isOpen ? 'rotate-180' : ''"
+  />
+</label>
+
+<ul [class]="isOpen ? 'active' : ''" class="steps flex gap-12 flex-col">
+  <li class="flex items-center gap-2">
+    <div
+      class="relative step-icon-wrap flex items-center justify-center p-3 rounded-full bg-[#F3F3F4]"
+    >
+      <img src="assets/icons/add.svg" alt="step icon" />
+    </div>
+    <div class="step-content flex flex-col">
+      <span class="text-[#080B22]">Ariza shakllangan sana</span>
+      <span class="text-sm text-[#9C9DA7]">12:00, 12.12.2021</span>
+    </div>
+  </li>
+
+  <li class="flex items-center gap-2">
+    <div
+      class="relative step-icon-wrap flex items-center justify-center p-3 rounded-full bg-[#DAF2E7]"
+    >
+      <img src="assets/icons/check.svg" alt="step icon" />
+    </div>
+    <div class="step-content flex flex-col">
+      <span class="text-[#080B22]">Yechish bo’yicha dalolatnoma yuklandi</span>
+      <span class="text-sm text-[#9C9DA7]">12:00, 12.12.2021</span>
+    </div>
+  </li>
+
+  <li class="flex items-center gap-2">
+    <div
+      class="relative step-icon-wrap flex items-center justify-center p-3 rounded-full bg-[#E8EDFB]"
+    >
+      <img src="assets/icons/download.svg" alt="step icon" />
+    </div>
+    <div class="step-content flex flex-col">
+      <span class="text-[#080B22]">Qiyoslashdan o‘tkazish jarayonida</span>
+      <span class="text-sm text-[#9C9DA7]">12:00, 12.12.2021</span>
+    </div>
+  </li>
+
+  <li class="flex items-center gap-2">
+    <div
+      class="relative step-icon-wrap flex items-center justify-center p-3 rounded-full bg-[#DAF2E7]"
+    >
+      <img src="assets/icons/check.svg" alt="step icon" />
+    </div>
+    <div class="step-content flex flex-col">
+      <span class="text-[#080B22]">Qiyoslashdan ijobiy o‘tkazildi</span>
+      <span class="text-sm text-[#9C9DA7]">12:00, 12.12.2021</span>
+    </div>
+  </li>
+
+  <li class="flex items-center gap-2">
+    <div
+      class="relative step-icon-wrap flex items-center justify-center p-3 rounded-full bg-[#DAF2E7]"
+    >
+      <img src="assets/icons/check.svg" alt="step icon" />
+    </div>
+    <div class="step-content flex flex-col">
+      <span class="text-[#080B22]">Qiyoslashdan ijobiy o‘tkazildi</span>
+      <span class="text-sm text-[#9C9DA7]">12:00, 12.12.2021</span>
+    </div>
+  </li>
+
+  <li class="flex items-center gap-2">
+    <div
+      class="relative step-icon-wrap flex items-center justify-center p-3 rounded-full bg-[#FFC9C9]"
+    >
+      <img
+        class="rejected-step-icon"
+        src="assets/icons/check.svg"
+        alt="step icon"
+      />
+    </div>
+    <div class="step-content flex flex-col">
+      <span class="text-[#080B22]">Qiyoslashdan salbiy o‘tkazildi</span>
+      <span class="text-sm text-[#9C9DA7]">12:00, 12.12.2021</span>
+    </div>
+  </li>
+
+  <li class="flex items-center gap-2">
+    <div
+      class="relative step-icon-wrap flex items-center justify-center p-3 rounded-full bg-[#FFE7BA]"
+    >
+      <img
+        class="repair-step-icon"
+        src="assets/icons/check.svg"
+        alt="step icon"
+      />
+    </div>
+    <div class="step-content flex flex-col">
+      <span class="text-[#080B22]">Qiyoslashdan salbiy o‘tkazildi</span>
+      <span class="text-sm text-[#9C9DA7]">12:00, 12.12.2021</span>
+    </div>
+  </li>
+</ul>

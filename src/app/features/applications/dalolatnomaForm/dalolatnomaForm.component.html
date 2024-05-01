@@ -1,0 +1,85 @@
+<app-modal [isModalOpen]="isModalOpen" [title]="title" (close)="closeModal()">
+  <form
+    (ngSubmit)="onSubmit()"
+    #f="ngForm"
+    class="flex flex-col gap-4 px-6 pt-6"
+  >
+    <div class="flex gap-4">
+      <div class="form-control flex-1">
+        <label
+          for="meter_number"
+          class="text-[#2E343E] font-InterMedium after:content-['*'] after:text-[#F80000]"
+        >
+          Hisoblagich raqamini kiriting:
+        </label>
+        <input
+          type="number"
+          id="meter_number"
+          class="w-full bg-[#F3F3F6] rounded-lg px-4 py-[10px] mt-2"
+          placeholder="123456789012"
+          required
+          ngModel
+          name="meter_number"
+          #meter_number="ngModel"
+          [class]="
+            meter_number.invalid && (meter_number.touched || f.submitted)
+              ? 'invalid'
+              : ''
+          "
+        />
+        @if(meter_number.invalid && (f.submitted || meter_number.touched )){
+        <p class="text-[#F80000] font-InterMedium text-sm mt-1 ml-1">
+          Hisoblagich raqamini kiriting
+        </p>
+        }
+      </div>
+      <div class="form-control flex-1">
+        <p
+          class="text-[#2E343E] font-InterMedium after:content-['*'] after:text-[#F80000]"
+        >
+          Dalolatnoma:
+        </p>
+        <label
+          id="file_input"
+          for="file"
+          class="max-h-fit flex justify-between bg-[#F3F3F6] rounded-lg px-4 py-[10px] mt-2"
+          [class]="
+            file.invalid && (file.touched || f.submitted) ? 'invalid' : ''
+          "
+        >
+          @if(filename){
+          <span>{{ filename }}</span>
+          } @else{
+
+          <span class="text-[#A2A0B3]"> Faylni tanlang </span>
+          }
+          <input
+            type="file"
+            id="file"
+            class="w-full bg-[#F3F3F6] rounded-lg px-4 py-[10px] mt-2"
+            hidden
+            required
+            ngModel
+            #file="ngModel"
+            name="file"
+            (change)="uploadFile($event)"
+          />
+          <img class="w-6 h-6" src="assets/icons/file-upload.svg" alt="" />
+        </label>
+        @if(file.invalid && ( file.touched || f.submitted )){
+        <p class="text-[#F80000] font-InterMedium text-sm mt-1 ml-1">
+          Faylni yuklang
+        </p>
+        }
+      </div>
+    </div>
+
+    <button
+      type="submit"
+      class="bg-customBlue px-16 py-2 flex items-center gap-2 text-white rounded max-w-fit mx-auto"
+    >
+      <img src="assets/icons/email.svg" alt="email icon" />
+      Yuborish
+    </button>
+  </form>
+</app-modal>

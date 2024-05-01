@@ -1,0 +1,19 @@
+@if(isModalOpen){
+<div
+  class="fixed inset-0 bg-[#394059] bg-opacity-[0.6] flex items-center justify-center z-10"
+>
+  <dialog open class="min-w-[800px] rounded-lg py-4">
+    <header class="flex justify-between items-center px-6 pb-4 border-b border-[#E8E7EC]">
+      <h2 class="text-lg font-semibold select-none">{{ title }}</h2>
+      <button class="cancel-btn" (click)="onClick()">
+        <fa-icon class="text-xl" [icon]="cancelBtnIcon"></fa-icon>
+      </button>
+    </header>
+
+    <div>
+      <ng-content></ng-content>
+    </div>
+  </dialog>
+</div>
+
+}

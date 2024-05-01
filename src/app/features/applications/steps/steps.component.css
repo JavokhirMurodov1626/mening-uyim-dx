@@ -1,0 +1,33 @@
+.steps {
+  height: 0;
+  overflow: hidden;
+}
+
+.steps.active {
+  height: auto;
+}
+
+.steps li .step-icon-wrap:before {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 48px;
+  width: 2px;
+  top: 100%;
+  left: 50%;
+  border: 1px dashed #ceced3;
+}
+
+.steps li:last-child .step-icon-wrap:before {
+  display: none;
+}
+
+.rejected-step-icon {
+  filter: brightness(0) saturate(100%) invert(57%) sepia(52%) saturate(6852%)
+    hue-rotate(333deg) brightness(107%) contrast(94%);
+}
+
+.repair-step-icon {
+  filter: brightness(0) saturate(100%) invert(41%) sepia(82%) saturate(2837%)
+    hue-rotate(15deg) brightness(99%) contrast(94%);
+}

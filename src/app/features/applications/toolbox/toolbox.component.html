@@ -1,0 +1,35 @@
+<section class="grid grid-cols-5 gap-4">
+  <div class="flex gap-2 relative">
+    <input
+      type="text"
+      role="search"
+      placeholder="Qidiruv"
+      class="input flex-1"
+      [style]="{ paddingRight: '2.5rem' }"
+    />
+    <img
+      class="absolute end-4 top-[50%] translate-y-[-50%]"
+      src="assets/icons/search.svg"
+      alt=""
+    />
+  </div>
+
+  <div class="">
+    <select class="w-full input" id="">
+      <option disabled selected value="0">Tanlang</option>
+      <option value="1">Barchasi</option>
+      <option value="2">Aktiv</option>
+      <option value="3">Passiv</option>
+    </select>
+  </div>
+
+  <div class="">
+    <input class="w-full input input-text" type="date" />
+  </div>
+
+  <button
+    class="bg-white py-2 px-[10px] rounded flex items-center justify-center max-w-fit shadow-custom"
+  >
+    <img class="h-5" src="assets/icons/refresh.svg" alt="refresh icon" />
+  </button>
+</section>

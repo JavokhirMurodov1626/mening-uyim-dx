@@ -1,0 +1,131 @@
+<section class="flex h-dvh">
+  <div
+    class="section__left bg-[#F1F6FB] pt-9 basis-1/2 flex flex-col justify-between"
+  >
+    <div class="flex gap-10 justify-center">
+      <div>
+        <img src="assets/icons/qurilish_logo.svg" alt="logo" />
+      </div>
+      <div>
+        <img src="assets/icons/uyim_dx_logo.svg" alt="logo" />
+      </div>
+    </div>
+
+    <h1 class="text-[#2E343E] text-center px-[66px] font-InterBold text-[40px]">
+      Issiq suvni hisobga olish uskunasini (hisoblagichni) qiyoslash va
+      o‘rnatish axborot tizimi
+    </h1>
+
+    <div class="self-center xl:w-1/2 mb-8">
+      <img class="w-full" src="assets/icons/hero_icon.svg" alt="hero" />
+    </div>
+  </div>
+
+  <div class="section__right flex flex-col basis-1/2 pt-10 px-8 pb-8">
+    <div class="top flex mb-[100px]">
+      <select
+        class="jusitfy-self-end px-4 py-2 rounded border border-[#E8E7EC] ml-auto"
+      >
+        <option value="uz">O'zbekcha</option>
+        <option value="ru">Русский</option>
+      </select>
+    </div>
+
+    <div class="title mb-8">
+      <h2 class="text-[#2E343E] text-[32px] font-InterBold mb-4">
+        Tizimga kirish
+      </h2>
+      <p class="text-[#2E343E]">
+        Avtorizatsiya turini tanlang va akkauntga kirish uchun ma'lumotlarni
+        to'ldiring
+      </p>
+    </div>
+
+    <div class="select-control max-w-[600px]">
+      <h3 class="text-[#2E343E] text-[18px] font-InterSemiBold mb-3">
+        ERI kalitini tanlang
+      </h3>
+      <form>
+        <ng-select
+          class="login-select"
+          [items]="certificates"
+          bindLabel="name"
+          bindValue="name"
+          placeholder="Kalitini tanlag"
+          notFoundText="Kalit topilmadi"
+          [searchFn]="customSearchFn"
+        >
+          <ng-template ng-label-tmp let-item="item">
+            {{ item.inn }}-<span class="capitalize">{{
+              item.parsedAlias.cn
+            }}</span>
+          </ng-template>
+
+          <ng-template
+            ng-option-tmp
+            let-item="item"
+            let-index="index"
+            let-search="searchTerm"
+          >
+            <div class="px-4 py-2 border-b">
+              <h4 class="text-dark-600 font-InterMedium capitalize">
+                {{ item.parsedAlias.cn }}
+              </h4>
+              <div class="flex gap-9">
+                <div>
+                  <label class="text-dark-600 text-xs">Mulkchilik turi:</label>
+                  <p class="text-sm text-dark-600 font-InterMedium">
+                    {{
+                      item.parsedAlias.o ? "Yuridik shaxs" : "Jismoniy shaxs"
+                    }}
+                  </p>
+                </div>
+                <div>
+                  <label class="text-dark-600 text-xs">INN</label>
+                  <p class="text-sm text-dark-600 font-InterMedium">
+                    {{ item.inn || "---" }}
+                  </p>
+                </div>
+                <div>
+                  <label class="text-dark-600 text-xs"
+                    >Serfitifikat amal qilish muddati:</label
+                  >
+
+                  <p class="text-sm text-dark-600 font-InterMedium">
+                    {{ item.parsedAlias.validfrom | date : "yyyy-MM-dd" }} -{{
+                      item.parsedAlias.validto | date : "yyyy-MM-dd"
+                    }}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </ng-template>
+        </ng-select>
+
+        <button
+          class="rounded-lg bg-customBlue text-white w-full p-4 font-InterMedium mt-8"
+          type="submit"
+        >
+          Tizimga kirish
+        </button>
+      </form>
+    </div>
+
+    <div class="bottom mb-6 mt-auto">
+      <div class="mb-5">
+        <p class="text-dark-600 mb-3">Texnik yordam xizmati:</p>
+        <p class="text-dark-600">
+          <span class="text-[#00349A] text-x font-InterSemiBold mr-3"
+            >(71) 210-11-04</span
+          >(ichki raqam: 3004)
+        </p>
+      </div>
+
+      <div class="flex">
+        <div class="ml-auto">
+          <img src="assets/icons/shaffof_logo.svg" alt="shaffof logo" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

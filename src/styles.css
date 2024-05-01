@@ -1,0 +1,255 @@
+@import "../node_modules/@ng-select/ng-select/themes/default.theme.css";
+@import "ngx-toastr/toastr";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+input,
+select {
+  outline: none;
+}
+
+select:focus {
+  box-shadow: inset 0px 0px 0px 1px #007aff;
+}
+
+/* ng-select custom style */
+.ng-select.ng-select-opened .ng-arrow-wrapper {
+  transform: rotate(180deg) !important;
+}
+
+.ng-select .ng-arrow-wrapper .ng-arrow {
+  pointer-events: none;
+  display: none !important;
+  height: 0;
+  width: 0;
+  position: relative;
+}
+.ng-select .ng-arrow-wrapper {
+  height: 20px;
+  width: 20px;
+  background-image: url("assets/icons/chevron-up.svg") !important;
+  background-repeat: no-repeat;
+  margin-right: 0;
+  margin-left: 0;
+  margin-top: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.login-select.ng-select.ng-select-single .ng-select-container {
+  height: auto !important;
+  padding: 12px 16px !important;
+  border: none;
+  background-color: #fafafa;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.ng-value-container {
+  padding-left: 0 !important;
+}
+
+.ng-input {
+  top: 50%;
+  transform: translateY(30%);
+  padding-left: 16px !important;
+}
+
+.login-select .ng-dropdown-panel.ng-select-bottom {
+  border: none;
+  margin-top: 8px;
+  border-radius: 4px;
+}
+
+.login-select ng-dropdown-panel .ng-dropdown-panel-items .ng-option {
+  background-color: #fafafa;
+}
+
+.login-select .ng-option.ng-option-marked {
+  background-color: #d3e9f3 !important;
+}
+/* end of the styles */
+
+label.invalid,
+input.invalid {
+  box-shadow: inset 0px 0px 0px 1px #f80000 !important;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+select {
+  background: url("assets/icons/chevron-up.svg") no-repeat;
+  background-position: calc(100% - 0.75rem) center !important;
+  -moz-appearance: none !important;
+  -webkit-appearance: none !important;
+  appearance: none !important;
+  padding-right: 2rem !important;
+}
+
+.ng-tooltip {
+  position: absolute;
+  max-width: 150px;
+  font-size: 12px;
+  text-align: center;
+  color: #f8f8f2;
+  padding: 8px;
+  background: #282a36;
+  border-radius: 4px;
+  z-index: 1000;
+  opacity: 0;
+}
+.ng-tooltip:after {
+  content: "";
+  position: absolute;
+  border-style: solid;
+}
+.ng-tooltip-top:after {
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-color: black transparent transparent transparent;
+}
+.ng-tooltip-bottom:after {
+  bottom: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-color: transparent transparent black transparent;
+}
+.ng-tooltip-left:after {
+  top: 50%;
+  left: 100%;
+  margin-top: -5px;
+  border-width: 5px;
+  border-color: transparent transparent transparent black;
+}
+.ng-tooltip-right:after {
+  top: 50%;
+  right: 100%;
+  margin-top: -5px;
+  border-width: 5px;
+  border-color: transparent black transparent transparent;
+}
+.ng-tooltip-show {
+  opacity: 1;
+}
+
+@font-face {
+  font-family: "Inter-Regular";
+  src: url("assets/fonts/Inter-Regular.woff2") format("woff2"),
+    url("assets/fonts/Inter-Regular.woff") format("woff");
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Inter-SemiBold";
+  src: url("assets/fonts/Inter-SemiBold.woff2") format("woff2"),
+    url("assets/fonts/Inter-SemiBold.woff") format("woff");
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Inter-Medium";
+  src: url("assets/fonts/Inter-Medium.woff2") format("woff2"),
+    url("assets/fonts/Inter-Medium.woff") format("woff");
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Inter-Bold";
+  src: url("assets/fonts/Inter-Bold.woff2") format("woff2"),
+    url("assets/fonts/Inter-Bold.woff") format("woff");
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Anton-Regular";
+  src: url("assets/fonts/Anton-Regular.woff") format("woff2"),
+    url("assets/fonts/Anton-Regular.woff") format("woff");
+  font-display: swap;
+  font-style: normal;
+}
+body {
+  font-family: Inter-Regular;
+}
+
+.input-wrapper,
+.form-control {
+  @apply w-full bg-[#F3F3F6] rounded-lg px-4 py-[10px] mt-2;
+}
+
+.input-label {
+  @apply text-[#2E343E] font-InterMedium after:content-['*'] after:text-[#F80000];
+}
+.input-text {
+  @apply placeholder:text-secondary-200;
+}
+
+.btn-primary {
+  @apply bg-customBlue  rounded-lg text-white text-base font-InterMedium;
+}
+
+.btn-secondary {
+  @apply rounded-lg border border-[#CF1322] text-[#CF1322];
+}
+.custom-shadow {
+  box-shadow: 0px 10px 20px 0px rgba(18, 38, 63, 0.03);
+}
+
+.application-data-li {
+  @apply px-6 py-3 rounded flex justify-between items-center;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #e5e5e5;
+  border-radius: 50px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #b7b7b7;
+}
+
+.form-select .ng-select-container {
+  margin-top: 8px;
+  height: auto !important;
+  padding: 10px 16px;
+  border: none;
+  background: #f3f3f6 !important;
+  border-radius: 8px;
+}
+
+.form-select .ng-select-container.ng-has-value {
+  background: #f3f3f6;
+  box-shadow: none;
+}
+.form-select .ng-value-container {
+  padding-left: 0 !important;
+}
+
+.form-select ng-dropdown-panel {
+  border-top: none;
+}
+
+.form-select.ng-select.ng-select-focused .ng-select-container {
+  box-shadow: inset 0px 0px 0px 1px #007aff;
+  border: none;
+}
+
+.form-select .ng-dropdown-panel.ng-select-bottom {
+  margin-top: 0;
+}

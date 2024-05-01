@@ -1,0 +1,17 @@
+<div class="toolbox mb-6 flex justify-end">
+  <app-button label="Добавить организацию" (buttonClick)="openModalHandler()" />
+  <app-modal
+    title="Добавить организацию"
+    [isModalOpen]="isOpen"
+    (close)="closeModalHandler()"
+  >
+    <add-org-form />
+  </app-modal>
+</div>
+
+<app-table
+  [headers]="headers"
+  [columns]="columns"
+  [data]="orgs"
+  [isLoading]="isOrgsLoading"
+/>

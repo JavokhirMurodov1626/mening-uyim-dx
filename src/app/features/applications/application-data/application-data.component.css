@@ -1,0 +1,10 @@
+.data-list li:nth-child(odd) {
+  background-color: #f3f3f4;
+}
+
+.data-list {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}

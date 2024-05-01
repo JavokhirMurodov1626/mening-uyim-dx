@@ -1,0 +1,41 @@
+<div class="">
+  <table class="w-full bg-white">
+    <thead class="border-b border-[#F0F0F0]">
+      <tr>
+        <th class="text-left text-sm p-4 text-[#585D65]">#</th>
+        @for(header of headers; track header; let idx = $index){
+        <th
+          class="{{
+            idx == headers.length - 1 ? 'p-4' : ''
+          }} text-left text-sm text-[#585D65] p-2 font-InterRegular"
+        >
+          {{ header }}
+        </th>
+        }
+      </tr>
+    </thead>
+    @if(data.length>0){
+    <tbody>
+      @for(item of data; track item.id; let idx = $index){
+      <tr class="odd:bg-white even:bg-[#F4F6FA]">
+        <td class="p-4 text-base">{{ idx + 1 }}</td>
+        @for(column of columns; track column; let idx = $index){
+        <td
+          class="{{
+            idx == columns.length - 1 ? 'p-4' : ''
+          }} text-left text-sm text-[#585D65] p-2 font-InterRegular"
+        >
+          <renderTableData [column]="column" [item]="item" />
+        </td>
+        }
+      </tr>
+      }
+    </tbody>
+    }
+  </table>
+  @if(data.length==0 && !isLoading){
+  <p class="text-center mt-3">Нет данных</p>
+  } @if(isLoading){
+  <p class="text-center mt-3">Loading...</p>
+  }
+</div>

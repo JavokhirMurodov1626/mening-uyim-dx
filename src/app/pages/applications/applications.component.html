@@ -1,0 +1,14 @@
+<div class="mb-4">
+  <stats-grid />
+</div>
+
+<div class="mb-4">
+  <app-toolbox />
+</div>
+
+<app-table
+  [headers]="headers"
+  [data]="applications"
+  [columns]="columns"
+  [isLoading]="isLoading"
+/>

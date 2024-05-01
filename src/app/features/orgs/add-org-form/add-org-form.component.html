@@ -1,0 +1,92 @@
+<form class="p-4">
+  <div class="grid grid-cols-2 gap-4">
+    <div class="col-span-1">
+      <label for="country" class="input-label">Область</label>
+      <ng-select
+        class="form-select"
+        [items]="regions"
+        bindLabel="label"
+        bindValue="value"
+        placeholder="Выберите область"
+        notFoundText="Область не найдена"
+        (change)="selectRegionHandler($event)"
+      >
+      </ng-select>
+    </div>
+
+    <div class="col-span-1">
+      <label for="country" class="input-label">Район</label>
+      <ng-select
+        class="form-select"
+        [items]="regions"
+        bindLabel="label"
+        bindValue="value"
+        placeholder="Выберите район"
+        notFoundText="Район не найден"
+      >
+      </ng-select>
+    </div>
+
+    <div class="col-span-1">
+      <label for="first-name" class="input-label">Название организации</label>
+
+      <input
+        type="text"
+        name="first-name"
+        id="first-name"
+        autocomplete="given-name"
+        class="form-control"
+        placeholder="Введите название организации"
+      />
+    </div>
+
+    <div class="col-span-1">
+      <label for="last-name" class="input-label">Ф.И.О руководитель</label>
+
+      <input
+        type="text"
+        name="last-name"
+        id="last-name"
+        autocomplete="family-name"
+        class="form-control"
+        placeholder="Введите Ф.И.О руководителя"
+      />
+    </div>
+
+    <div class="col-span-1">
+      <label for="last-name" class="input-label">ИНН</label>
+
+      <input
+        type="number"
+        name="last-name"
+        id="last-name"
+        autocomplete="family-name"
+        class="form-control"
+        placeholder="Введите ИНН"
+      />
+    </div>
+
+    <div class="col-span-1">
+      <label for="last-name" class="input-label">Номер телефона</label>
+
+      <input
+        type="text"
+        name="last-name"
+        id="last-name"
+        autocomplete="family-name"
+        class="form-control"
+        placeholder="Введите номер телефона"
+      />
+    </div>
+  </div>
+  <div class="form_bottom flex justify-end mt-6">
+    <!-- 2 button save and close in russian -->
+    <button class="close-btn btn-secondary mr-4 px-3 py-2">
+      <span>Закрыть</span>
+    </button>
+
+    <button class="submit-btn btn-primary rounded px-3 py-2">
+      <span>Сохранить</span>
+    </button>
+  </div>
+</form>
