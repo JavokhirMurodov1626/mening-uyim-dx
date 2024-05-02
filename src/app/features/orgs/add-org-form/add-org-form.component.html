@@ -1,91 +1,100 @@
-<form class="p-4">
+<form class="p-4" [formGroup]="addOrgForm" (ngSubmit)="onSubmit()">
   <div class="grid grid-cols-2 gap-4">
     <div class="col-span-1">
-      <label for="country" class="input-label">Область</label>
+      <label for="region" class="input-label">Область</label>
       <ng-select
+        id="region"
         class="form-select"
         [items]="regions"
         bindLabel="label"
         bindValue="value"
         placeholder="Выберите область"
         notFoundText="Область не найдена"
+        (clear)="addOrgForm.get('region')?.setValue(0)"
         (change)="selectRegionHandler($event)"
       >
       </ng-select>
     </div>
 
     <div class="col-span-1">
-      <label for="country" class="input-label">Район</label>
+      <label for="district" class="input-label">Район</label>
       <ng-select
+        id="district"
         class="form-select"
         [items]="regions"
         bindLabel="label"
         bindValue="value"
         placeholder="Выберите район"
         notFoundText="Район не найден"
+        (clear)="addOrgForm.get('district')?.setValue(0)"
+        (change)="selectDistrictHandler($event)"
       >
       </ng-select>
     </div>
 
     <div class="col-span-1">
-      <label for="first-name" class="input-label">Название организации</label>
+      <label for="org-name" class="input-label">Название организации</label>
 
       <input
         type="text"
-        name="first-name"
-        id="first-name"
+        name="org-name"
+        id="org-name"
         autocomplete="given-name"
         class="form-control"
         placeholder="Введите название организации"
+        formControlName="orgName"
       />
     </div>
 
     <div class="col-span-1">
-      <label for="last-name" class="input-label">Ф.И.О руководитель</label>
+      <label for="supervisor" class="input-label">Ф.И.О руководитель</label>
 
       <input
         type="text"
-        name="last-name"
-        id="last-name"
-        autocomplete="family-name"
+        name="supervisor"
+        id="supervisor"
+        autocomplete="supervisor"
         class="form-control"
         placeholder="Введите Ф.И.О руководителя"
+        formControlName="supervisor"
       />
     </div>
 
     <div class="col-span-1">
-      <label for="last-name" class="input-label">ИНН</label>
+      <label for="tin" class="input-label">ИНН</label>
 
       <input
         type="number"
-        name="last-name"
-        id="last-name"
-        autocomplete="family-name"
+        name="tin"
+        id="tin"
+        autocomplete="tin"
         class="form-control"
         placeholder="Введите ИНН"
+        formControlName="tin"
       />
     </div>
 
     <div class="col-span-1">
-      <label for="last-name" class="input-label">Номер телефона</label>
+      <label for="phone-numer" class="input-label">Номер телефона</label>
 
       <input
         type="text"
-        name="last-name"
-        id="last-name"
-        autocomplete="family-name"
+        name="phone-numer"
+        id="phone-numer"
+        autocomplete="phone-number"
         class="form-control"
         placeholder="Введите номер телефона"
+        formControlName="phone"
       />
     </div>
   </div>
   <div class="form_bottom flex justify-end mt-6">
     <!-- 2 button save and close in russian -->
-    <button class="close-btn btn-secondary mr-4 px-3 py-2">
+    <button type="button" class="close-btn btn-secondary mr-4 px-3 py-2">
       <span>Закрыть</span>
     </button>
 
-    <button class="submit-btn btn-primary rounded px-3 py-2">
+    <button type="submit" class="submit-btn btn-primary rounded px-3 py-2">
       <span>Сохранить</span>
     </button>
   </div>
